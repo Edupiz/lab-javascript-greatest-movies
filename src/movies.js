@@ -37,13 +37,15 @@ function dramaMoviesScore(moviesArray) {
     });
     if (dramas.length == '0') {return 0;}
     else {return (Math.round(dramas.reduce((accumulator, currentVal) => accumulator + currentVal.score, 0)/ dramas.length * 100))/100};
-
-    
-  //  let dramas.score = 
 }
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
-function orderByYear(moviesArray) {}
+function orderByYear(moviesArray) {
+    let ordenadas = Array.from(moviesArray);
+    ordenadas.sort((a,b) => {
+     return a.year.localeCompare(b.year);
+    });return ordenadas;
+}
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 function orderAlphabetically(moviesArray) {
